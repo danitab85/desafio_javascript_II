@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <button onclick="sortArray()">Clasificar Arreglo</button>
+  <ul id="par">
+    <strong>Pares</strong>
+  </ul>
+  <ul id="impar">
+    <strong>Impares</strong>
+  </ul>
+  <ul id="string">
+    <strong>Strings</strong>
+  </ul>
+  <script>
+    var arr = [1,'dos','tres',4,5,6,'siete',8,9,'diez'];
+    var even_list = document.getElementById('par')
+    var odd_list = document.getElementById('impar')
+    var string_list = document.getElementById('string')
+    function sortArray(){
+      arr.forEach(function(ele){
+        li = document.createElement('li');
+        li.innerText = ele;
+        console.log(li)
+        switch(typeof(ele)){
+          case 'number':
+          if (ele % 2 == 0){
+            even_list.appendChild(li);
+          }else{
+            odd_list.appendChild(li);
+          }break;
+          case 'string':
+          string_list.appendChild(li)
+          break
+        }
+      })
+    };
+  </script>
+</body>
+</html>
